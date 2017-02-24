@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>customize-context-menu</title>
+    <style type="text/css">
+    .click {
+      height: 36px;
+      width: 900px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      border: 2px solid #e3e3e3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      padding: 40px;
+      line-height: 36px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    
+    .menu {
+      margin: 0;
+      padding: 0;
+      width: 400px;
+      background: #fff;
+      border: 2px solid #d0d0d0;
+      border-radius: 4px;
+      position: fixed;
+    }
+    
+    .menu li {
+      list-style: none;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+      font-weight: bold;
+      text-indent: 40px;
+    }
+    
+    .menu li:hover {
+      background: #f1f1f1;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="click" id="clickDiv">right click to see the menu!</div>
+    <script type="text/javascript">
+    var oDiv = document.getElementById('clickDiv')
+    var ul, li
+    document.addEventListener('contextmenu', function(event) {
+      var top = event.clientY + 'px'
+      var left = event.clientX + 'px'
+      if (event.target === oDiv) {
+        ul = document.querySelector('.menu')
+        if (ul) {
+          ul.style.top = top
+          ul.style.left = left
+        } else {
+          ul = document.createElement('ul')
+          ul.className = 'menu'
+          for (var i = 0; i < 3; i++) {
+            li = document.createElement('li')
+            li.textContent = `Menu Item ${i+1}`
+            ul.appendChild(li)
+          }
+          ul.style.top = top
+          ul.style.left = left
+          document.body.appendChild(ul)
+        }
+      } else if (ul) {
+        ul.remove()
+      }
+      event.preventDefault();
+      return false
+    })
+    document.addEventListener('click', function(event) {
+      if (ul) {
+        var liList = ul.querySelectorAll('li')
+        if (Array.prototype.includes.call(liList, event.target)) {
+          alert(event.target.textContent)
+            //event.target.remove()
+        }
+        ul.remove()
+      }
+    })
+
+    </script>
+  </body>
+
+</html>
+
