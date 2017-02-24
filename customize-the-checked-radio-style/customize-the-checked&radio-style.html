@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>customize-the-checked-radio-style.html</title>
+    <style type="text/css">
+    form {
+      width: 300px;
+      margin: 100px auto;
+    }
+    
+    .check-sprite,
+    .radio-sprite {
+      display: block;
+      text-indent: 26px;
+      font-size: 16px;
+      line-height: 16px;
+      user-select: none;
+      margin-bottom: 5px;
+    }
+    
+    .check-sprite {
+      height: 14px;
+      background: url('img/sprite.gif') no-repeat 0 -32px;
+    }
+    
+    .radio-sprite {
+      height: 16px;
+      background: url('img/sprite.gif') no-repeat 0 0px;
+    }
+    
+    #check-sprite1:checked + .check-sprite,
+    #check-sprite2:checked + .check-sprite {
+      background: url('img/sprite.gif') no-repeat 0 -46px;
+    }
+    
+    #radio-sprite1:checked + .radio-sprite,
+    #radio-sprite2:checked + .radio-sprite {
+      background: url('img/sprite.gif') no-repeat 0 -16px;
+    }
+    
+    .check-pseudo::after,
+    .radio-pseudo::after {
+      content: '';
+      position: absolute;
+      top: 9999px;
+    }
+    
+    .check-pseudo::after {
+      width: 14px;
+      height: 14px;
+      background: url('img/sprite.gif') no-repeat 0 -32px;
+    }
+    
+    .radio-pseudo::after {
+      width: 16px;
+      height: 16px;
+      background: url('img/sprite.gif') no-repeat 0 0px;
+    }
+    
+    .check-pseudo:checked::after {
+      background: url('img/sprite.gif') no-repeat 0 -46px;
+    }
+    
+    .radio-pseudo:checked::after {
+      background: url('img/sprite.gif') no-repeat 0 -16px;
+    }
+    
+    .display {
+      display: none;
+    }
+    
+    .position {
+      position: relative;
+      top: -9999px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <!-- 雪碧图实现 -->
+      <input class="display" id="check-sprite1" type="checkbox" name="check-sprite">
+      <label for="check-sprite1" class="check-sprite">雪碧图实现：复选框一</label>
+      <input class="display" id="check-sprite2" type="checkbox" name="check-sprite">
+      <label for="check-sprite2" class="check-sprite">雪碧图实现：复选框二</label>
+      <input class="display" id="radio-sprite1" type="radio" name="radio-sprite">
+      <label for="radio-sprite1" class="radio-sprite">雪碧图实现：单选框一</label>
+      <input class="display" id="radio-sprite2" type="radio" name="radio-sprite">
+      <label for="radio-sprite2" class="radio-sprite">雪碧图实现：单选框二</label>
+      <!-- 伪元素实现 -->
+      <label>
+        <input class="check-pseudo position" type="checkbox" name="check-pseudo"> 伪元素实现：复选框一
+      </label>
+      <br>
+      <label>
+        <input class="check-pseudo position" type="checkbox" name="check-pseudo"> 伪元素实现：复选框二
+      </label>
+      <br>
+      <label>
+        <input class="radio-pseudo position" type="radio" name=radio-pseudo ""> 伪元素实现：单选框一
+      </label>
+      <br>
+      <label>
+        <input class="radio-pseudo position" type="radio" name=radio-pseudo ""> 伪元素实现：单选框一
+      </label>
+      <br>
+    </form>
+  </body>
+
+</html>
+
