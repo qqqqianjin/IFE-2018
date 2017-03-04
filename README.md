@@ -2,6 +2,7 @@
 
 1. 小薇学院
 	1. [任务一：零基础 HTML 编码](https://grassrootscoder.github.io/IFE-2017/html/html.html)
+	2. [任务二：零基础HTML及CSS编码（一）](https://grassrootscoder.github.io/IFE-2017/html-css/html-css.html)
 2. 斌斌学院
 3. 耀耀学院
 4. 商业平台学院
