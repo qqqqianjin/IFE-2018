@@ -4,6 +4,7 @@
 	1. [任务一：零基础 HTML 编码](https://grassrootscoder.github.io/IFE-2017/html/html.html)
 	2. [任务二：零基础HTML及CSS编码（一）](https://grassrootscoder.github.io/IFE-2017/html-css/html-css.html)
 	3. [任务三：三栏式布局](https://grassrootscoder.github.io/IFE-2017/three-column-layout/three-column-layout.html)
+	4. [任务四：定位和居中问题](https://grassrootscoder.github.io/IFE-2017/centered/centered.html)
 2. 斌斌学院
 3. 耀耀学院
 4. 商业平台学院
