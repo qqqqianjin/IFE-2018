@@ -1,0 +1,181 @@
+body,
+h1,
+ul,
+li,
+p,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: #dedede;
+}
+
+#title {
+  display: none;
+}
+
+#nav {
+  height: 60px;
+  background-color: #333;
+}
+
+#nav div {
+  width: 1280px;
+  height: 60px;
+  margin: 0 auto;
+  background: url("../img/logo.png") no-repeat 40px 10px;
+}
+
+#nav ul {
+  float: right;
+}
+
+#nav li {
+  height: 60px;
+  list-style: disc;
+  float: left;
+  margin-right: 28px;
+}
+
+#nav li>a {
+  line-height: 60px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#nav li>a:hover {
+  color: #a7a7a7;
+}
+
+article {
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #cdcdcd;
+  box-shadow: 2px 2px 5px #888888;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 400px;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+article h2 {
+  font-size: 16px;
+  color: #696969;
+}
+
+article address {
+  font-size: 12px;
+  color: #696969;
+  font-style: normal;
+  line-height: 42px;
+}
+
+article p {
+  font-size: 14px;
+  line-height: 26px;
+}
+
+#photo-list li {
+  box-sizing: border-box;
+  width: 122px;
+  height: 126px;
+  border: 1px solid #c7c7c7;
+  padding: 10px;
+  text-align: center;
+  margin: 15px 40px;
+  float: left;
+}
+
+#photo-list li img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+article table {
+  border-collapse: collapse;
+  width: 100%;
+  border-color: #ccc;
+}
+
+article thead {
+  color: #fff;
+  background-color: #333;
+  text-align: left;
+}
+
+article tfoot {
+  background-color: #ccc;
+}
+
+aside {
+  width: 360px;
+  height: 500px;
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #cdcdcd;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 20px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+aside h1 {
+  font-size: 16px;
+  line-height: 38px;
+  text-indent: 10px;
+  border-left: 3px solid #ccc;
+}
+
+aside h2 {
+  display: none;
+}
+
+#form li {
+  height: 24px;
+  margin-top: 10px;
+  margin-left: 130px;
+  position: relative;
+}
+
+#form li p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+#form span {
+  position: absolute;
+  width: 300px;
+  text-align: right;
+  left: -320px;
+}
+
+#submit {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color: #3355d0;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 80px;
+}
+
+footer {
+  height: 70px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+}
+
