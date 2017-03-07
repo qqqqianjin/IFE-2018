@@ -8,6 +8,7 @@
 	5. [任务五：零基础HTML及CSS编码（二）](https://grassrootscoder.github.io/IFE-2017/html-css-2/html-css-2.html)
 	6. [任务六：通过HTML及CSS模拟报纸排版](https://grassrootscoder.github.io/IFE-2017/message-layout/message.html)
 	7. [任务七：实现常见的技术产品官网的页面架构及样式布局](https://grassrootscoder.github.io/IFE-2017/official-website-layout/official-website.html)
+	8. [任务八：响应式网格（栅格化）布局](https://grassrootscoder.github.io/IFE-2017/media-layout/media-layout.html)
 2. 斌斌学院
 3. 耀耀学院
 4. 商业平台学院

@@ -1,0 +1,101 @@
+section,
+div {
+  background-color: rgba(255, 0, 0, .2);
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid maroon;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.row::before,
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  margin: 15px;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  padding: 15px;
+}
+
+.col-1 {
+  width: 8.3333%;
+}
+
+.col-2 {
+  width: 16.6666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333%;
+}
+
+.col-5 {
+  width: 41.6666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333%;
+}
+
+.col-8 {
+  width: 66.6666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333%;
+}
+
+.col-11 {
+  width: 91.6666%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+@media all and (max-width:1280px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media all and (max-width:960px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media all and (max-width:768px) {
+  .container {
+    max-width: 576px;
+  }
+  [class*=col-] {
+    width: 100%;
+  }
+}
+
