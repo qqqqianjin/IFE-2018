@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>zero-based-1</title>
+    <style type="text/css">
+    #content {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    #content li {
+      list-style: none;
+      margin: 10px;
+      padding: 10px;
+      float: left;
+      border: 1px solid maroon;
+      background-color: rgba(255, 0, 0, .3);
+      transition: all .5 ease-in-out;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <input id="value" type="text" autocomplete="off">
+    <div id="wrap">
+      <button id="unshift">左侧入</button>
+      <button id="push">右侧入</button>
+      <button id="shift">左侧出</button>
+      <button id="pop">右侧出</button>
+    </div>
+    <ul id="content">
+    </ul>
+    <script type="text/javascript">
+    var oUl = document.getElementById('content')
+    var oLi = document.getElementById('value')
+    document.getElementById('wrap').addEventListener('click', function(event) {
+      var val = oLi.value || '' + ~~(Math.random() * 10)
+      var li = document.createElement('li')
+      li.textContent = val;
+      if (event.target.id === 'unshift') {
+        oUl.insertBefore(li, oUl.firstElementChild)
+      }
+      if (event.target.id === 'push') {
+        oUl.appendChild(li)
+      }
+      if (event.target.id === 'shift') {
+        oUl.removeChild(oUl.firstElementChild)
+      }
+      if (event.target.id === 'pop') {
+        oUl.removeChild(oUl.lastElementChild)
+      }
+      oLi.value = ''
+    })
+
+    </script>
+  </body>
+
+</html>
+
