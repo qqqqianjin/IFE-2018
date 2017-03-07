@@ -64,9 +64,9 @@
       var resort = document.getElementById('resort')
       resort.innerHTML = ''
       var frag = new DocumentFragment()
-      data.forEach(function(it) {
+      data.forEach(function(it, index) {
         var li = document.createElement('li')
-        li.innerHTML = `${it[0]}空气质量：<b>${it[1]}</b>`
+        li.innerHTML = `第 ${index+1} 名：${it[0]}空气质量：<b>${it[1]}</b>`
         frag.appendChild(li)
       })
       resort.appendChild(frag)
