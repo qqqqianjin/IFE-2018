@@ -16,6 +16,7 @@
 	4. [任务四：基础JavaScript练习（一）](https://grassrootscoder.github.io/IFE-2017/js-base-1/base-1.html)
 	5. [任务五：基础JavaScript练习（二）](https://grassrootscoder.github.io/IFE-2017/js-base-2/base-2.html)
 	6. [任务六：基础JavaScript练习（三）](https://grassrootscoder.github.io/IFE-2017/js-base-3/base-3.html)
+	7. [任务七：JavaScript和树（一）](https://grassrootscoder.github.io/IFE-2017/js-tree-1/tree-1.html)
 3. 耀耀学院
 4. 商业平台学院
 5. Echarts & WebVR 学院
