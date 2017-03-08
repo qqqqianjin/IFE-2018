@@ -76,6 +76,9 @@
         for (let i = 0; i < loop; i++) {
           for (let j = 0; j < loop - i; j++) {
             setTimeout(function() {
+              cleanShadow(aLi)
+              aLi[j].style.boxShadow = `0 0 2px 2px maroon`
+              aLi[j + 1].style.boxShadow = `0 0 2px 2px maroon`
               if (parseInt(aLi[j].style.height) > parseInt(aLi[j + 1].style.height)) {
                 oUl.insertBefore(aLi[j + 1], aLi[j])
                 aLi[j].style.left = `${5+25*j}px`
@@ -84,6 +87,8 @@
             }, 500 * count++)
           }
         }
+        setTimeout(cleanShadow, 500 * count, aLi)
+
         //判断数字是否合法
       } else if (val > 100 || val < 10) {
         alert('请输入 10 ~ 100 之间的数字')
@@ -119,6 +124,13 @@
     function setLeft(items) {
       [].forEach.call(items, function(it, index) {
         it.style.left = `${5+25*index}px`
+      })
+    }
+
+    // 清楚列表影子
+    function cleanShadow(items) {
+      [].forEach.call(items, function(it) {
+        it.style.boxShadow = 'none'
       })
     }
 
