@@ -14,6 +14,7 @@
 	2. [任务二：零基础JavaScript编码（二）](https://grassrootscoder.github.io/IFE-2017/js-zero-based-2/zero-based-2.html)
 	3. [任务三：零基础JavaScript编码（三）](https://grassrootscoder.github.io/IFE-2017/js-zero-based-3/zero-based-3.html)
 	4. [任务四：基础JavaScript练习（一）](https://grassrootscoder.github.io/IFE-2017/js-base-1/base-1.html)
+	5. [任务五：基础JavaScript练习（二）](https://grassrootscoder.github.io/IFE-2017/js-base-2/base-2.html)
 3. 耀耀学院
 4. 商业平台学院
 5. Echarts & WebVR 学院
