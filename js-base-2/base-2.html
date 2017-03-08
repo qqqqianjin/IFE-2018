@@ -42,10 +42,15 @@
     var oText = document.getElementById('value')
     var oUl = document.getElementById('content')
     var aLi = oUl.getElementsByTagName('li')
+    var timer = 0
 
     oText.value = ~~(Math.random() * 90) + 10
       // 绑定代理元素 form 的点击事件
     document.getElementById('wrap').addEventListener('click', function(event) {
+      while (timer > 0) {
+        clearTimeout(timer)
+        timer--
+      }
       var val = +oText.value
       var li = document.createElement('li')
       var firstLeft = oUl.firstElementChild ? parseInt(oUl.firstElementChild.style.left) : 5
@@ -56,26 +61,29 @@
         // 触发事件的元素判断
         // 左侧移除元素
       if (event.target.id === 'shift') {
-        setTimeout(function() {
+        timer = setTimeout(function() {
           oUl.removeChild(oUl.firstElementChild)
           setLeft(aLi)
         }, 500)
         oUl.firstElementChild.style.opacity = 0
         oUl.firstElementChild.style.left = `${firstLeft-50}px`
+        cleanShadow(aLi)
           //右侧移除元素
       } else if (event.target.id === 'pop') {
-        setTimeout(function() {
+        timer = setTimeout(function() {
           oUl.removeChild(oUl.lastElementChild)
         }, 500)
         oUl.lastElementChild.style.opacity = 0
         oUl.lastElementChild.style.left = `${lastLeft+50}px`
+        cleanShadow(aLi)
           //排序
       } else if (event.target.id === 'sort') {
         var loop = aLi.length - 1
         let count = 0
         for (let i = 0; i < loop; i++) {
           for (let j = 0; j < loop - i; j++) {
-            setTimeout(function() {
+            timer = setTimeout(function() {
+              clearTimeout(timer)
               cleanShadow(aLi)
               aLi[j].style.boxShadow = `0 0 2px 2px maroon`
               aLi[j + 1].style.boxShadow = `0 0 2px 2px maroon`
@@ -104,9 +112,11 @@
             oUl.firstElementChild.style.opacity = 1
           }, 0)
           setTimeout(function() {
-              setLeft(aLi)
-            }, 500)
-            //右侧添加元素
+            setLeft(aLi)
+          }, 500)
+          cleanShadow(aLi)
+
+          //右侧添加元素
         } else if (event.target.id === 'push') {
           li.style.left = `${lastLeft+75}px`
           li.style.opacity = 0
@@ -115,9 +125,11 @@
             oUl.lastElementChild.style.left = `${lastLeft+25}px`
             oUl.lastElementChild.style.opacity = 1
           }, 0)
+          cleanShadow(aLi)
         }
       }
       oText.value = ~~(Math.random() * 90) + 10
+
     })
 
     // 重新计算列表所有元素的 left 值
