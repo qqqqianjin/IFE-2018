@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>zero-based-3</title>
+    <style type="text/css">
+    #content {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    #content li {
+      list-style: none;
+      margin: 10px;
+      padding: 10px;
+      float: left;
+      border: 1px solid maroon;
+      background-color: rgba(255, 0, 0, .3);
+      transition: all .1 ease-in-out;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <textarea id="value" cols="30" rows="10"></textarea>
+    <div id="wrap">
+      <button id="unshift">左侧入</button>
+      <button id="push">右侧入</button>
+      <button id="shift">左侧出</button>
+      <button id="pop">右侧出</button>
+    </div>
+    <div id="search">
+      <input type="text" id="search-value">
+      <button id="search-btn">查询</button>
+    </div>
+    <ul id="content">
+    </ul>
+    <script type="text/javascript">
+    var oUl = document.getElementById('content')
+    var oText = document.getElementById('value')
+    var searchValue = document.getElementById('search-value')
+    document.getElementById('wrap').addEventListener('click', function(event) {
+      var val = oText.value
+      if (val === '') {
+        alert('请输入内容')
+        return
+      }
+      var valList = val.split(/[\s,，。、\| ]/).filter(it => it !== '')
+      var frag = new DocumentFragment()
+      valList.forEach(function(it) {
+        var li = document.createElement('li')
+        li.textContent = it
+        frag.appendChild(li)
+      })
+      if (event.target.id === 'unshift') {
+        oUl.insertBefore(frag, oUl.firstElementChild)
+      }
+      if (event.target.id === 'push') {
+        oUl.appendChild(frag)
+      }
+      if (event.target.id === 'shift') {
+        oUl.removeChild(oUl.firstElementChild)
+      }
+      if (event.target.id === 'pop') {
+        oUl.removeChild(oUl.lastElementChild)
+      }
+      oText.value = ''
+    })
+    document.getElementById('search-btn').addEventListener('click', function() {
+      var value = searchValue.value
+      var reg = new RegExp(value)
+      Array.prototype.forEach.call(oUl.children, function(it) {
+        if (reg.test(it.textContent)) {
+          it.style.boxShadow = ' 0 0 3px 3px gold'
+          it.style.backgroundColor = 'maroon'
+          it.style.color = 'gold'
+          it.style.fontWeight = 'bold'
+        }
+      })
+    })
+
+    </script>
+  </body>
+
+</html>
+
